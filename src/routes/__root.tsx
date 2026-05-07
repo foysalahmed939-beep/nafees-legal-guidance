@@ -12,6 +12,7 @@ import appCss from "../styles.css?url";
 import { SiteNav } from "@/components/SiteNav";
 import { SiteFooter } from "@/components/SiteFooter";
 import { WhatsAppFab } from "@/components/WhatsAppFab";
+import { MouseGlow } from "@/components/MouseGlow";
 
 function NotFoundComponent() {
   return (
@@ -116,6 +117,7 @@ function RootComponent() {
   const { queryClient } = Route.useRouteContext();
   return (
     <QueryClientProvider client={queryClient}>
+      <MouseGlow />
       <SiteNav />
       <main className="pt-20">
         <Outlet />
