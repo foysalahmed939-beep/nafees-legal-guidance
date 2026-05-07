@@ -12,6 +12,7 @@ import appCss from "../styles.css?url";
 import { SiteNav } from "@/components/SiteNav";
 import { SiteFooter } from "@/components/SiteFooter";
 import { WhatsAppFab } from "@/components/WhatsAppFab";
+import { MouseGlow } from "@/components/MouseGlow";
 
 function NotFoundComponent() {
   return (
@@ -51,14 +52,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "theme-color", content: "#0b1736" },
       { property: "og:type", content: "website" },
       { property: "og:site_name", content: "Barrister Mufti Nafees" },
-      { property: "og:image", content: "/favicon.jpg" },
+      { property: "og:image", content: "/favicon.png" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:image", content: "/favicon.jpg" },
+      { name: "twitter:image", content: "/favicon.png" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
-      { rel: "icon", type: "image/jpeg", href: "/favicon.jpg" },
-      { rel: "apple-touch-icon", href: "/favicon.jpg" },
+      { rel: "icon", type: "image/png", href: "/favicon.png" },
+      { rel: "apple-touch-icon", href: "/favicon.png" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" },
@@ -116,6 +117,7 @@ function RootComponent() {
   const { queryClient } = Route.useRouteContext();
   return (
     <QueryClientProvider client={queryClient}>
+      <MouseGlow />
       <SiteNav />
       <main className="pt-20">
         <Outlet />

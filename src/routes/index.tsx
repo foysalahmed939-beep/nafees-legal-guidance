@@ -1,9 +1,10 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, Award, ShieldCheck, Scale, CheckCircle2, Sparkles, Quote, Star, Calendar } from "lucide-react";
+import { ArrowRight, Award, ShieldCheck, Scale, CheckCircle2, Sparkles, Quote, Star, Calendar, Tv, Play } from "lucide-react";
 import profileImg from "@/assets/mufti-profile.jpg";
 import tvImg from "@/assets/tv-program.jpg";
 import flagsImg from "@/assets/flags.jpg";
 import commissionImg from "@/assets/high-commission.jpg";
+import { Tilt3D } from "@/components/Tilt3D";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -110,16 +111,17 @@ function HomePage() {
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((s, i) => (
-            <div
-              key={s.title}
-              className="card-3d group bg-card border border-border rounded-2xl p-7 hover:border-gold/40 relative overflow-hidden"
-              style={{ animationDelay: `${i * 80}ms` }}
-            >
-              <div className="absolute -top-12 -right-12 w-32 h-32 rounded-full bg-gold/5 group-hover:bg-gold/10 transition-colors" />
-              <s.icon className="w-9 h-9 text-gold mb-5 relative" strokeWidth={1.5} />
-              <h3 className="font-serif text-xl mb-2 relative">{s.title}</h3>
-              <p className="text-sm text-muted-foreground leading-relaxed relative">{s.desc}</p>
-            </div>
+            <Tilt3D key={s.title} className="rounded-2xl" max={10}>
+              <div
+                className="group bg-card border border-border rounded-2xl p-7 hover:border-gold/40 relative overflow-hidden h-full"
+                style={{ animationDelay: `${i * 80}ms` }}
+              >
+                <div className="absolute -top-12 -right-12 w-32 h-32 rounded-full bg-gold/5 group-hover:bg-gold/10 transition-colors" />
+                <s.icon className="w-9 h-9 text-gold mb-5 relative" strokeWidth={1.5} />
+                <h3 className="font-serif text-xl mb-2 relative">{s.title}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed relative">{s.desc}</p>
+              </div>
+            </Tilt3D>
           ))}
         </div>
       </section>
@@ -148,6 +150,49 @@ function HomePage() {
               Read full biography <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
+        </div>
+      </section>
+
+      {/* TV SHOWS */}
+      <section className="container mx-auto px-6 py-24">
+        <div className="flex items-end justify-between flex-wrap gap-6 mb-14">
+          <div className="max-w-2xl">
+            <div className="gold-divider mb-4" />
+            <div className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.25em] text-gold mb-3">
+              <Tv className="w-4 h-4" /> On Television
+            </div>
+            <h2 className="font-serif text-4xl md:text-5xl mb-4">Featured TV programmes</h2>
+            <p className="text-muted-foreground text-lg">Watch Mufti Nafees discuss legal awareness, immigration and access to justice.</p>
+          </div>
+          <Link to="/tv-shows" className="inline-flex items-center gap-2 text-foreground font-medium border-b-2 border-gold pb-1 hover:gap-3 transition-all">
+            View all episodes <ArrowRight className="w-4 h-4" />
+          </Link>
+        </div>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {[
+            { id: "OdIpLlb-A7U", title: "Legal Awareness Programme" },
+            { id: "KLGo_zC3sQg", title: "Community Law Discussion" },
+            { id: "KF2iU1lSivI", title: "UK Immigration & Justice" },
+          ].map((v, i) => (
+            <Tilt3D key={v.id} className="rounded-2xl" max={10}>
+              <div className="bg-card border border-border rounded-2xl overflow-hidden hover:border-gold/40 transition-colors animate-scale-in" style={{ animationDelay: `${i * 100}ms` }}>
+                <div className="relative aspect-video">
+                  <iframe
+                    src={`https://www.youtube.com/embed/${v.id}`}
+                    title={v.title}
+                    loading="lazy"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    className="absolute inset-0 w-full h-full"
+                  />
+                </div>
+                <div className="p-5 flex items-center gap-3">
+                  <Play className="w-4 h-4 text-gold" />
+                  <h3 className="font-serif text-lg">{v.title}</h3>
+                </div>
+              </div>
+            </Tilt3D>
+          ))}
         </div>
       </section>
 
