@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { Menu, X, Phone } from "lucide-react";
+import logo from "@/assets/logo.png";
 
 const links = [
   { to: "/", label: "Home" },
@@ -30,9 +31,7 @@ export function SiteNav() {
     >
       <div className="container mx-auto px-6 flex items-center justify-between h-20">
         <Link to="/" className="flex items-center gap-3 group">
-          <div className="w-10 h-10 rounded-full bg-primary-gradient grid place-items-center text-gold font-serif text-xl shadow-gold">
-            M
-          </div>
+          <img src={logo} alt="Barrister Mufti Nafees logo" className="w-12 h-12 object-contain transition-transform duration-500 group-hover:rotate-[8deg] group-hover:scale-110 drop-shadow-[0_4px_12px_rgba(212,175,55,0.35)]" />
           <div className="leading-tight">
             <div className="font-serif text-lg text-foreground">Barrister Mufti Nafees</div>
             <div className="text-[10px] tracking-[0.25em] uppercase text-muted-foreground">Solicitor &amp; Partner</div>
