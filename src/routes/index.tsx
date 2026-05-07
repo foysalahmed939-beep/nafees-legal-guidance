@@ -1,9 +1,10 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, Award, ShieldCheck, Scale, CheckCircle2, Sparkles, Quote, Star, Calendar } from "lucide-react";
+import { ArrowRight, Award, ShieldCheck, Scale, CheckCircle2, Sparkles, Quote, Star, Calendar, Tv, Play } from "lucide-react";
 import profileImg from "@/assets/mufti-profile.jpg";
 import tvImg from "@/assets/tv-program.jpg";
 import flagsImg from "@/assets/flags.jpg";
 import commissionImg from "@/assets/high-commission.jpg";
+import { Tilt3D } from "@/components/Tilt3D";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -110,16 +111,17 @@ function HomePage() {
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((s, i) => (
-            <div
-              key={s.title}
-              className="card-3d group bg-card border border-border rounded-2xl p-7 hover:border-gold/40 relative overflow-hidden"
-              style={{ animationDelay: `${i * 80}ms` }}
-            >
-              <div className="absolute -top-12 -right-12 w-32 h-32 rounded-full bg-gold/5 group-hover:bg-gold/10 transition-colors" />
-              <s.icon className="w-9 h-9 text-gold mb-5 relative" strokeWidth={1.5} />
-              <h3 className="font-serif text-xl mb-2 relative">{s.title}</h3>
-              <p className="text-sm text-muted-foreground leading-relaxed relative">{s.desc}</p>
-            </div>
+            <Tilt3D key={s.title} className="rounded-2xl" max={10}>
+              <div
+                className="group bg-card border border-border rounded-2xl p-7 hover:border-gold/40 relative overflow-hidden h-full"
+                style={{ animationDelay: `${i * 80}ms` }}
+              >
+                <div className="absolute -top-12 -right-12 w-32 h-32 rounded-full bg-gold/5 group-hover:bg-gold/10 transition-colors" />
+                <s.icon className="w-9 h-9 text-gold mb-5 relative" strokeWidth={1.5} />
+                <h3 className="font-serif text-xl mb-2 relative">{s.title}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed relative">{s.desc}</p>
+              </div>
+            </Tilt3D>
           ))}
         </div>
       </section>
