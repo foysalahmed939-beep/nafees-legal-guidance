@@ -47,6 +47,12 @@ export function SiteFooter() {
         <div className="container mx-auto px-6 py-6 text-xs text-primary-foreground/60 flex flex-col md:flex-row justify-between gap-2">
           <p>© {new Date().getFullYear()} Barrister Mufti Nafees. All rights reserved.</p>
           <p>Regulated by the Solicitors Regulation Authority.</p>
+          <p>
+            Website Designed &amp; Developed by{" "}
+            <a href="https://londonwebhub.co.uk" target="_blank" rel="noopener noreferrer" className="text-gold hover:underline">
+              London Web Hub
+            </a>
+          </p>
         </div>
       </div>
     </footer>
