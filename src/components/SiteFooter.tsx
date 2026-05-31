@@ -1,4 +1,3 @@
-import { Link } from "@tanstack/react-router";
 import { Mail, Phone, MapPin, Facebook, MessageCircle, Globe } from "lucide-react";
 
 export function SiteFooter() {
@@ -22,10 +21,11 @@ export function SiteFooter() {
         <div>
           <h4 className="font-serif text-lg mb-4 text-gold">Navigate</h4>
           <ul className="space-y-2 text-sm text-primary-foreground/80">
-            <li><Link to="/" className="hover:text-gold">Home</Link></li>
-            <li><Link to="/about" className="hover:text-gold">About</Link></li>
-            <li><Link to="/services" className="hover:text-gold">Practice Areas</Link></li>
-            <li><Link to="/contact" className="hover:text-gold">Contact</Link></li>
+            <li><a href="#home" className="hover:text-gold">Home</a></li>
+            <li><a href="#about" className="hover:text-gold">About</a></li>
+            <li><a href="#services" className="hover:text-gold">Practice Areas</a></li>
+            <li><a href="#tv" className="hover:text-gold">TV Shows</a></li>
+            <li><a href="#contact" className="hover:text-gold">Contact</a></li>
           </ul>
         </div>
 
