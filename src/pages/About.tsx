@@ -15,9 +15,9 @@ export default function AboutPage() {
     <section className="bg-secondary/40 border-b border-border">
       <div className="container mx-auto px-6 py-24 grid lg:grid-cols-2 gap-14 items-center">
         <div className="grid grid-cols-2 gap-4">
-          <img src={tvImg} alt="Mufti Nafees on ATN Bangla UK legal awareness program" className="rounded-2xl object-cover h-64 w-full card-3d" />
-          <img src={flagsImg} alt="Mufti Nafees representing UK and Bangladesh communities" className="rounded-2xl object-cover h-64 w-full card-3d mt-8" />
-          <img src={commissionImg} alt="Mufti Nafees at the Bangladesh High Commission, London" className="rounded-2xl object-cover h-64 w-full col-span-2 card-3d" />
+          <img src={tvImg} alt="Mufti Nafees on ATN Bangla UK legal awareness program" loading="lazy" decoding="async" className="rounded-2xl object-cover h-64 w-full card-3d" />
+          <img src={flagsImg} alt="Mufti Nafees representing UK and Bangladesh communities" loading="lazy" decoding="async" className="rounded-2xl object-cover h-64 w-full card-3d mt-8" />
+          <img src={commissionImg} alt="Mufti Nafees at the Bangladesh High Commission, London" loading="lazy" decoding="async" className="rounded-2xl object-cover h-64 w-full col-span-2 card-3d" />
         </div>
         <div>
           <div className="gold-divider mb-4" />
@@ -50,7 +50,7 @@ export default function AboutPage() {
             ))}
           </div>
 
-          <img src={cardImg} alt="Mufti Islam business card" className="rounded-xl w-full max-w-sm object-cover shadow-elegant" />
+          <img src={cardImg} alt="Mufti Islam business card" loading="lazy" decoding="async" className="rounded-xl w-full max-w-sm object-cover shadow-elegant" />
         </div>
       </div>
     </section>
