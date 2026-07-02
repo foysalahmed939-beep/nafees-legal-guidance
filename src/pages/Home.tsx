@@ -59,7 +59,7 @@ export default function HomePage() {
           <div className="relative animate-scale-in">
             <div className="absolute -inset-6 rounded-[2rem] bg-gold/10 blur-2xl" />
             <div className="relative card-3d rounded-[2rem] overflow-hidden border border-gold/20 shadow-elegant">
-              <img src={profileImg} alt="Barrister Mufti Nafees, London Solicitor and Partner at Commonwealth Solicitors" className="w-full h-full object-cover" />
+              <img src={profileImg} alt="Barrister Mufti Nafees, London Solicitor and Partner at Commonwealth Solicitors" width="900" height="1100" fetchPriority="high" decoding="async" className="w-full h-full object-cover" />
               <div className="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent" />
               <div className="absolute bottom-6 left-6 right-6 text-primary-foreground">
                 <div className="text-xs uppercase tracking-[0.3em] text-gold mb-1">Solicitor</div>
