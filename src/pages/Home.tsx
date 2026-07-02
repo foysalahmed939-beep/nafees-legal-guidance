@@ -1,4 +1,3 @@
-import { createFileRoute } from "@tanstack/react-router";
 import {
   ArrowRight, Award, ShieldCheck, Scale, CheckCircle2, Sparkles, Quote, Star, Calendar,
   Tv, Play, GraduationCap, MapPin, Briefcase, Building2, Home, Banknote,
@@ -11,18 +10,7 @@ import commissionImg from "@/assets/high-commission.jpg";
 import cardImg from "@/assets/business-card.jpg";
 import { Tilt3D } from "@/components/Tilt3D";
 
-export const Route = createFileRoute("/")({
-  head: () => ({
-    meta: [
-      { title: "Barrister Mufti Nafees | London Solicitor – Immigration, Asylum & Commercial Law" },
-      { name: "description", content: "Trusted London solicitor and partner at Commonwealth Solicitors. Specialist in Immigration, Asylum, Nationality, Commercial Lease, Tenancy & Money Claims. Book a consultation today." },
-      { property: "og:title", content: "Barrister Mufti Nafees – London Solicitor" },
-      { property: "og:description", content: "Expert legal advice in Immigration, Asylum and Commercial law from Whitechapel, London." },
-      { property: "og:image", content: "/favicon.png" },
-    ],
-  }),
-  component: HomePage,
-});
+export default function HomePage() {
 
 const services = [
   { icon: ShieldCheck, title: "Immigration Law", desc: "Visas, settlement, sponsorship and complex applications handled with precision.", points: ["Spouse & family visas", "Work and sponsor licences", "Indefinite leave & settlement", "Appeals & judicial review"] },
