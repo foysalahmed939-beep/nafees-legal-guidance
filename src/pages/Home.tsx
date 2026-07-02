@@ -10,7 +10,6 @@ import commissionImg from "@/assets/high-commission.jpg";
 import cardImg from "@/assets/business-card.jpg";
 import { Tilt3D } from "@/components/Tilt3D";
 
-export default function HomePage() {
 
 const services = [
   { icon: ShieldCheck, title: "Immigration Law", desc: "Visas, settlement, sponsorship and complex applications handled with precision.", points: ["Spouse & family visas", "Work and sponsor licences", "Indefinite leave & settlement", "Appeals & judicial review"] },
@@ -42,7 +41,7 @@ const contactItems = [
   { icon: Globe, label: "Chambers Website", value: "www.cwchambers.com", href: "https://www.cwchambers.com" },
 ];
 
-function HomePage() {
+export default function HomePage() {
   return (
     <>
       {/* HERO */}
