@@ -50,7 +50,7 @@ export default function AboutPage() {
             ))}
           </div>
 
-          <img src={cardImg} alt="Mufti Islam business card" className="rounded-xl w-full max-w-sm object-cover shadow-elegant" />
+          <img src={cardImg} alt="Mufti Islam business card" loading="lazy" decoding="async" className="rounded-xl w-full max-w-sm object-cover shadow-elegant" />
         </div>
       </div>
     </section>
