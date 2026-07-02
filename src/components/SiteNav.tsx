@@ -3,14 +3,14 @@ import { useEffect, useState } from "react";
 import { Menu, X, Phone } from "lucide-react";
 import logo from "@/assets/logo.png";
 
-const links = [
+const links: { to: string; label: string; end?: boolean }[] = [
   { to: "/", label: "Home", end: true },
   { to: "/about", label: "About" },
   { to: "/services", label: "Practice Areas" },
   { to: "/tv-shows", label: "TV Shows" },
   { to: "/testimonials", label: "Testimonials" },
   { to: "/contact", label: "Contact" },
-] as const;
+];
 
 export function SiteNav() {
   const [scrolled, setScrolled] = useState(false);
